@@ -10,7 +10,7 @@ def tandg(deg):
 
 
 def calc_PD(toz):
-    return 1.38e4 * (((0.26 / (toz - 13.7)) + 0.0239) ** 2 - 8.57e-4)
+    return (34-toz)*(0.3-0.05)**0.62*(3.14+0.37*0.3*0.1)
 
 
 def calc_E(te, toz, ts):
