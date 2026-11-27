@@ -9,8 +9,9 @@ def tandg(deg):
     return np.tan(np.deg2rad(deg))
 
 
-def calc_PD(toz):
-    return (34-toz)*(0.3-0.05)**0.62*(3.14+0.37*0.3*0.1)
+def calc_PD(toz, U=0.3, Tu=10.0):
+    U = max(U, 0.05)
+    return max(0.0, (34 - toz) * (U - 0.05) ** 0.62 * (3.14 + 0.37 * U * Tu))
 
 
 def calc_E(te, toz, ts):
